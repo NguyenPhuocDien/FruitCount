@@ -91,9 +91,3 @@ Dự án đã có sẵn file `render.yaml`. Các bước triển khai:
 
 - **Frontend:** Next.js 16, React 19, Tailwind CSS 4
 - **Inference:** Python – PyTorch, Ultralytics YOLO, ONNX Runtime, TensorFlow/Keras
-
-## ❓ Lỗi thường gặp
-
-- **`Không tìm thấy Python`** → cài Python và nhớ tick _Add to PATH_, rồi mở lại terminal.
-- **Cài TensorFlow thất bại** → web vẫn chạy bình thường, chỉ không mở được mô hình `.h5/.keras/.tflite`. Thường do dùng Python 3.13+; hãy dùng Python 3.12.
-- **Có GPU NVIDIA nhưng chạy bằng CPU** → cài PyTorch bản CUDA theo hướng dẫn tại https://pytorch.org/get-started/locally/
