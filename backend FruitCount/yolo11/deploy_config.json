@@ -1,0 +1,15 @@
+{
+  "weights": "/kaggle/working/fruitcount_compare/best_fruitcount.pt",
+  "dataset": "M1_Photometric",
+  "arch": "yolo11m",
+  "p2": false,
+  "imgsz": 832,
+  "mode": "tiled_full",
+  "det_conf": 0.35,
+  "count_conf": 0.325,
+  "calib_a": 1.0119043521267863,
+  "calib_b": -0.5701510734932109,
+  "tile": 640,
+  "tile_overlap": 0.25,
+  "tile_imgsz": 960
+}

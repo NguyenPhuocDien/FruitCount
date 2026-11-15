@@ -1,0 +1,42 @@
+# v0 sandbox internal files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+.vercel/
+
+# Environment variables
+.env*.local
+.env
+.env.*
+!.env.example
+
+# Common ignores
+node_modules
+.next/
+.next-*/
+.DS_Store
+
+# Temporary & cache files
+.temp_inference/
+__pycache__/
+*.pyc
+*.tsbuildinfo
+*.log
+*.zip
+*.tar
+*.tar.gz
+
+# Local model weights
+backend FruitCount/**/*.pt
+backend FruitCount/**/*.pth
+backend FruitCount/**/*.onnx
+backend FruitCount/**/*.ckpt
+backend FruitCount/**/*.safetensors
+backend FruitCount/**/*.bin
+
+# Local test evidence and Python environments
+analysis_outputs/
+.venv/
+venv/

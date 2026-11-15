@@ -1,0 +1,9 @@
+# Temporary HTTPS URL for external testers. No domain or Cloudflare account required.
+services:
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    command: tunnel --no-autoupdate --protocol http2 --url http://web:3000
+    restart: unless-stopped
+    depends_on:
+      web:
+        condition: service_healthy

@@ -1,0 +1,4 @@
+# Full Python feature set; install PyTorch/torchvision separately for your device.
+-r requirements-core.txt
+# Optional in Docker: enable with INSTALL_TENSORFLOW=true.
+tensorflow-cpu>=2.18,<3

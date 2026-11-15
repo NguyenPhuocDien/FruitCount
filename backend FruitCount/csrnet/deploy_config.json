@@ -1,0 +1,18 @@
+{
+  "weights": "/kaggle/working/fruitcount_compare/best_fruitcount_csrnet.pth",
+  "dataset": "M1_Photometric",
+  "model": "CSRNet++",
+  "use_ibn": true,
+  "use_se": true,
+  "aspp_rates": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "mode": "tiled_full",
+  "calib_a": 0.991313828238012,
+  "calib_b": 0.3053101792720875,
+  "tile": 512,
+  "tile_overlap": 0.25
+}

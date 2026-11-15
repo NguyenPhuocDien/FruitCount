@@ -1,0 +1,113 @@
+{
+  "upstream_commit": "d8752b75c9beaecfcdd0e5cd207bae3b6946ae23",
+  "training_notebook": "vyxwolf/fruitcount-ecdet-m-o365-ddp-20261111",
+  "checkpoint": {
+    "filename": "best.pt",
+    "state_key": "model",
+    "selection": "selected EMA checkpoint"
+  },
+  "report_protocol": {
+    "mode": "full",
+    "imgsz": 832,
+    "count_conf": 0.4,
+    "det_conf": 0.35,
+    "calibrated": false
+  },
+  "files": [
+    {
+      "path": "best.pt",
+      "sha256": "ceca5ffae0182df4fa8b741d2e941b75c70ccaf87e1fb4032aa35a396e26c782",
+      "upstream_path": "experiments/ecdet_fruitcount/outputs/fruitcount_ecdet/runs/Original/best.pt"
+    },
+    {
+      "path": "native_model_config.json",
+      "sha256": "b5ceb0e5e2885dd907823b8a046192a3d26641ae684e166edce29f03bb969456",
+      "upstream_path": "experiments/ecdet_fruitcount/outputs/fruitcount_ecdet/runs/Original/native_model_config.json"
+    },
+    {
+      "path": "ecdet_native/LICENSE.md",
+      "sha256": "4e68b3866dcf54ff3fce7c0c5f187b3197bf27563134911c7c2bd2a6b75e05ae",
+      "upstream_path": "experiments/edgecrafter/LICENSE.md"
+    },
+    {
+      "path": "ecdet_native/core/workspace.py",
+      "sha256": "f4aa2173245c39c497d91a0d3f8373ea124cf271fc62585c05a9ce25a8fb2a84",
+      "upstream_path": "experiments/edgecrafter/ecdetseg/engine/core/workspace.py"
+    },
+    {
+      "path": "ecdet_native/edgecrafter/decoder.py",
+      "sha256": "372370461d8737feb44391e4ec5e3f49b3890a3e3e5111bb61f956d6332da11c",
+      "upstream_path": "experiments/edgecrafter/ecdetseg/engine/edgecrafter/decoder.py"
+    },
+    {
+      "path": "ecdet_native/edgecrafter/ecvit.py",
+      "sha256": "110612dc45c1eac83f890c57f77c374d71b11e8682fcea5d6b015f949c1b5e64",
+      "upstream_path": "experiments/edgecrafter/ecdetseg/engine/edgecrafter/ecvit.py"
+    },
+    {
+      "path": "ecdet_native/edgecrafter/hybrid_encoder.py",
+      "sha256": "66ec50001581f3f01631af55fb44e06ef1e06dc5c692c9705b6917292189b985",
+      "upstream_path": "experiments/edgecrafter/ecdetseg/engine/edgecrafter/hybrid_encoder.py"
+    },
+    {
+      "path": "ecdet_native/edgecrafter/modeling.py",
+      "sha256": "0f682c658f1f00b1cf71d7508b0c9513adfd3f25cb7156aa50a83aa11ac2a487",
+      "upstream_path": "experiments/edgecrafter/ecdetseg/engine/edgecrafter/modeling.py"
+    },
+    {
+      "path": "ecdet_native/edgecrafter/postprocessor.py",
+      "sha256": "93d81478c9175e2a343bf5a78beebeb97a84eccfc23b0120d06eee8efa49d3e0",
+      "upstream_path": "experiments/edgecrafter/ecdetseg/engine/edgecrafter/postprocessor.py"
+    },
+    {
+      "path": "ecdet_native/edgecrafter/box_ops.py",
+      "sha256": "ec1b9d5f40a46b1e0c2787a8db1e19d8fadeaeccb9d60b2eeb47b6bc40c34ef4",
+      "upstream_path": "experiments/edgecrafter/ecdetseg/engine/edgecrafter/box_ops.py"
+    },
+    {
+      "path": "ecdet_native/edgecrafter/denoising.py",
+      "sha256": "a0ef6d660f57c20beeb1cd29fb6c96d219c575b301a5736015f522b896a7f487",
+      "upstream_path": "experiments/edgecrafter/ecdetseg/engine/edgecrafter/denoising.py"
+    },
+    {
+      "path": "ecdet_native/edgecrafter/utils.py",
+      "sha256": "b82b511152f7776edb02e3220bb9a457a0e31a3fb8e890b46a5c3661148dc448",
+      "upstream_path": "experiments/edgecrafter/ecdetseg/engine/edgecrafter/utils.py"
+    },
+    {
+      "path": "ecdet_native/edgecrafter/segmentation_head.py",
+      "sha256": "69ddc14d4617c48015d370471822392181e0f36e46b980c81fdff367e4ab9d4e",
+      "upstream_path": "experiments/edgecrafter/ecdetseg/engine/edgecrafter/segmentation_head.py"
+    },
+    {
+      "path": "ecdet_native/core/__init__.py",
+      "sha256": "c162bb4a9544e3f4e12ea39ef97bdd6c0c2223f4025467a77d61edba1ccbf857",
+      "upstream_path": null,
+      "note": "Local inference-only import boundary / compatibility helper."
+    },
+    {
+      "path": "ecdet_native/__init__.py",
+      "sha256": "3ec2fe0731ee088f398e99c7a7682681293d1dcecaff5d81fc9e416b6dfbc37b",
+      "upstream_path": null,
+      "note": "Local inference-only import boundary / compatibility helper."
+    },
+    {
+      "path": "ecdet_native/edgecrafter/__init__.py",
+      "sha256": "c199c9bc83d72ad4959134043320f12fbbf303b6c59444f1a5ffbfd1214de31d",
+      "upstream_path": null,
+      "note": "Local inference-only import boundary / compatibility helper."
+    },
+    {
+      "path": "ecdet_native/misc/__init__.py",
+      "sha256": "2ec41c051bf0464ffd3998e7f324fc871a427c73dd6509d8649cffcfd1f84f90",
+      "upstream_path": null,
+      "note": "Local inference-only import boundary / compatibility helper."
+    },
+    {
+      "path": "ecdet_native/misc/dist_utils.py",
+      "sha256": "55af79c40477f86342aeebcf22d91d760cc1b2eefa02941e95d24c1e027c8454",
+      "upstream_path": null,
+      "note": "Local inference-only import boundary / compatibility helper."
+    }
+  ]
+}

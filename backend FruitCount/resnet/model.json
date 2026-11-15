@@ -1,0 +1,9 @@
+{
+  "name": "ResNet FruitCount",
+  "family": "resnet",
+  "task": "classification",
+  "weights": "best.pth",
+  "norm": "imagenet",
+  "imgsz": 224,
+  "classes": []
+}

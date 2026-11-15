@@ -1,0 +1,31 @@
+{
+  "name": "ECDet-M O365 — Original",
+  "family": "ecdet",
+  "task": "detection",
+  "weights": "best.pt",
+  "deployConfig": "deploy_config.json",
+  "adapter": "adapter.py",
+  "requiredFiles": [
+    "ecdet_native/LICENSE.md",
+    "ecdet_native/__init__.py",
+    "ecdet_native/core/__init__.py",
+    "ecdet_native/core/workspace.py",
+    "ecdet_native/edgecrafter/__init__.py",
+    "ecdet_native/edgecrafter/box_ops.py",
+    "ecdet_native/edgecrafter/decoder.py",
+    "ecdet_native/edgecrafter/denoising.py",
+    "ecdet_native/edgecrafter/ecvit.py",
+    "ecdet_native/edgecrafter/hybrid_encoder.py",
+    "ecdet_native/edgecrafter/modeling.py",
+    "ecdet_native/edgecrafter/postprocessor.py",
+    "ecdet_native/edgecrafter/segmentation_head.py",
+    "ecdet_native/edgecrafter/utils.py",
+    "ecdet_native/misc/__init__.py",
+    "ecdet_native/misc/dist_utils.py",
+    "native_model_config.json",
+    "source_files.json"
+  ],
+  "classes": [
+    "fruit"
+  ]
+}

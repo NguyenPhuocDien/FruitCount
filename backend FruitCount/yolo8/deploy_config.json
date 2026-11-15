@@ -1,0 +1,15 @@
+{
+  "weights": "/kaggle/working/fruitcount_compare/best_fruitcount.pt",
+  "dataset": "M2_CCT_HSV",
+  "arch": "yolov8m",
+  "p2": true,
+  "imgsz": 832,
+  "mode": "tiled_full",
+  "det_conf": 0.35,
+  "count_conf": 0.35,
+  "calib_a": 1.0382394316510146,
+  "calib_b": 0.8172777418274249,
+  "tile": 640,
+  "tile_overlap": 0.25,
+  "tile_imgsz": 960
+}

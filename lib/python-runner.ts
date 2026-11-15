@@ -1,0 +1,132 @@
+import { spawn } from 'child_process'
+import path from 'path'
+import fs from 'fs'
+
+export const RESULT_MARKER = '__AILAB_RESULT__'
+const SCRIPT = path.join(/*turbopackIgnore: true*/ process.cwd(), 'scripts', 'run_inference.py')
+const TEMP_DIR = process.env.FRUITCOUNT_TEMP_DIR || path.join(/*turbopackIgnore: true*/ process.cwd(), '.temp_inference')
+
+export type PythonResult = { ok: true; data: any } | { ok: false; error: string }
+
+export function ensureTempDir() {
+  if (!fs.existsSync(TEMP_DIR)) fs.mkdirSync(TEMP_DIR, { recursive: true })
+  return TEMP_DIR
+}
+
+export function newRunId(prefix = 'run') {
+  return `${prefix}-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`
+}
+
+/** Save an uploaded File to the temp dir, keeping its extension (needed to pick the right loader). */
+export async function saveUpload(file: File, runId: string, role: string): Promise<string> {
+  const ext = (path.extname(file.name) || '').toLowerCase().replace(/[^a-z0-9.]/g, '')
+  const p = path.join(ensureTempDir(), `${role}-${runId}${ext}`)
+  fs.writeFileSync(p, Buffer.from(await file.arrayBuffer()))
+  return p
+}
+
+export function safeUnlink(...files: (string | null | undefined)[]) {
+  for (const f of files) {
+    try {
+      if (f && fs.existsSync(f)) fs.unlinkSync(f)
+    } catch {
+      /* ignore */
+    }
+  }
+}
+
+/** Keep only meaningful stderr lines (drop FutureWarning / UserWarning noise). */
+function cleanStderr(stderr: string): string {
+  const tbIdx = stderr.lastIndexOf('Traceback (most recent call last)')
+  if (tbIdx >= 0) return stderr.slice(tbIdx).trim().slice(-2500)
+  const lines = stderr
+    .split(/\r?\n/)
+    .filter((l) => l.trim() && !/Warning|warnings\.warn|^\s+loaded = torch\.load/.test(l))
+  return lines.slice(-15).join('\n').trim()
+}
+
+export function runModelScript(args: string[], timeoutMs = 300_000, signal?: AbortSignal): Promise<PythonResult> {
+  if (signal?.aborted) return Promise.resolve({ ok: false, error: 'Đã hủy tác vụ.' })
+  return new Promise((resolve) => {
+    const defaultPython = process.platform === 'win32' ? 'python' : 'python3'
+    const pythonBin = process.env.PYTHON_BIN || defaultPython
+    const child = spawn(pythonBin, [SCRIPT, ...args], {
+      cwd: process.cwd(),
+      detached: process.platform !== 'win32',
+      windowsHide: true,
+      env: {
+        ...process.env,
+        PYTHONIOENCODING: 'utf-8',
+        PYTHONUTF8: '1',
+        YOLO_AUTOINSTALL: 'False',
+        YOLO_OFFLINE: 'True',
+        YOLO_VERBOSE: 'False',
+      },
+    })
+    let stdout = ''
+    let stderr = ''
+    let settled = false
+    let stopReason: string | null = null
+    let treeStopped: Promise<void> | null = null
+    const finish = (r: PythonResult) => {
+      if (!settled) {
+        settled = true
+        clearTimeout(timer)
+        signal?.removeEventListener('abort', onAbort)
+        resolve(r)
+      }
+    }
+    // Wait for the whole tree before callers delete the uploaded files. Windows
+    // venv launchers may create a second Python process beneath the spawned PID.
+    const stop = (reason: string) => {
+      if (settled || stopReason) return
+      stopReason = reason
+      if (process.platform === 'win32' && child.pid) {
+        treeStopped = new Promise<void>((done) => {
+          const killer = spawn('taskkill', ['/PID', String(child.pid), '/T', '/F'], { windowsHide: true })
+          killer.on('error', () => { child.kill(); done() })
+          killer.on('close', () => done())
+        })
+      } else {
+        try { if (child.pid) process.kill(-child.pid, 'SIGKILL') }
+        catch { child.kill('SIGKILL') }
+      }
+    }
+    const onAbort = () => stop('Đã hủy tác vụ.')
+    const timer = setTimeout(() => stop(`Mô hình chạy quá ${Math.round(timeoutMs / 1000)} giây nên đã bị dừng.`), timeoutMs)
+    signal?.addEventListener('abort', onAbort, { once: true })
+    if (signal?.aborted) onAbort()
+
+    child.stdout.on('data', (d) => (stdout += d.toString('utf8')))
+    child.stderr.on('data', (d) => (stderr += d.toString('utf8')))
+    child.on('error', (err: any) => {
+      finish({
+        ok: false,
+        error:
+          err?.code === 'ENOENT'
+            ? 'Không tìm thấy Python trên máy. Hãy cài Python và thêm vào PATH.'
+            : `Không khởi động được Python: ${err.message}`,
+      })
+    })
+    child.on('close', async (code) => {
+      if (treeStopped) await treeStopped
+      if (stopReason) return finish({ ok: false, error: stopReason })
+      const line = stdout
+        .split(/\r?\n/)
+        .reverse()
+        .find((l) => l.startsWith(RESULT_MARKER))
+      if (line) {
+        try {
+          return finish({ ok: true, data: JSON.parse(line.slice(RESULT_MARKER.length)) })
+        } catch (e: any) {
+          return finish({ ok: false, error: `Kết quả trả về không hợp lệ: ${e.message}` })
+        }
+      }
+      const detail = cleanStderr(stderr) || stdout.trim().slice(-1500)
+      finish({
+        ok: false,
+        error: `Tiến trình Python kết thúc (mã ${code}) mà không trả kết quả.${detail ? '\n' + detail : ''}`,
+      })
+    })
+  })
+}

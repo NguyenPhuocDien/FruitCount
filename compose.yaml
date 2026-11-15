@@ -1,0 +1,28 @@
+name: fruitcount
+services:
+  web:
+    image: fruitcount-ai:cpu
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        INSTALL_TENSORFLOW: ${INSTALL_TENSORFLOW:-false}
+    init: true
+    restart: unless-stopped
+    ports:
+      - "${FRUITCOUNT_BIND_ADDRESS:-0.0.0.0}:${FRUITCOUNT_PORT:-3000}:3000"
+    environment:
+      HOSTNAME: 0.0.0.0
+      PORT: "3000"
+      PYTHON_BIN: /opt/venv/bin/python
+      FRUITCOUNT_MODEL_ROOT: /models
+      FRUITCOUNT_TEMP_DIR: /tmp/fruitcount
+    volumes:
+      - type: bind
+        source: ${FRUITCOUNT_MODELS_DIR:-./backend FruitCount}
+        target: /models
+        read_only: true
+        bind:
+          create_host_path: false
+    shm_size: 1gb
+    stop_grace_period: 30s

@@ -1,0 +1,14 @@
+# Use together with compose.yaml; requires NVIDIA Container Toolkit / Docker Desktop GPU support.
+services:
+  web:
+    image: fruitcount-ai:gpu
+    build:
+      args:
+        TORCH_INDEX_URL: https://download.pytorch.org/whl/cu124
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

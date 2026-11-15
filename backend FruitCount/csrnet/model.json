@@ -1,0 +1,12 @@
+{
+  "name": "CSRNet FruitCount",
+  "family": "csrnet",
+  "task": "segmentation",
+  "weights": "best_fruitcount_csrnet.pth",
+  "deployConfig": "deploy_config.json",
+  "adapter": "adapter.py",
+  "requiredFiles": ["csrnet_plus.py"],
+  "classes": [
+    "fruit"
+  ]
+}

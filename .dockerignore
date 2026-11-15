@@ -1,0 +1,27 @@
+.git
+.agents
+.codex
+.aws
+.openai
+node_modules
+.next
+.next-*
+.temp_inference
+.venv
+venv
+**/__pycache__
+**/*.pyc
+**/*.tsbuildinfo
+**/*.log
+*.zip
+*.tar
+*.tar.gz
+.env
+.env.*
+!.env.example
+docs
+backend FruitCount
+scripts/test*
+start.bat
+start.sh
+render.yaml

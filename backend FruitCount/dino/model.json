@@ -1,0 +1,11 @@
+{
+  "name": "DINO FruitCount",
+  "family": "dino",
+  "task": "detection",
+  "weights": "best.pth",
+  "deployConfig": "deploy_config.json",
+  "adapter": "adapter.py",
+  "classes": [
+    "fruit"
+  ]
+}

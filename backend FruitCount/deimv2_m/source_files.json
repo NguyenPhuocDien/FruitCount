@@ -1,0 +1,212 @@
+{
+  "upstream_commit": "f005f50ce565e63f6c298feccb51901a98c3d035",
+  "training_notebook": "vyxwolf/fruitcount-deimv2-m-ddp-m1-v2-20261111-part-2",
+  "checkpoint": {
+    "filename": "best.pt",
+    "state_key": "model",
+    "selection": "selected EMA checkpoint"
+  },
+  "report_protocol": {
+    "mode": "full",
+    "imgsz": 832,
+    "count_conf": 0.4,
+    "det_conf": 0.35,
+    "calibrated": false
+  },
+  "files": [
+    {
+      "path": "best.pt",
+      "sha256": "c342647a088fb800196199b9ce92ca8dfd063bc3011b9f14bee983ffdee331b0",
+      "upstream_path": "experiments/fruitcount_deimv2/outputs/m1_part2/fruitcount_deimv2/runs/M1/best.pt"
+    },
+    {
+      "path": "native_model_config.json",
+      "sha256": "411eaf428015372aa57cc65a40534edf31cd1309ee07af030e16ccf726f88ee2",
+      "upstream_path": "experiments/fruitcount_deimv2/outputs/m1_part2/fruitcount_deimv2/runs/M1/native_model_config.json"
+    },
+    {
+      "path": "deimv2_native/LICENSE.md",
+      "sha256": "b8e737b8476354d7682cf8063e9f1e5ddf224e64e2e9703aaff66ff39d3c6b97",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/LICENSE.md"
+    },
+    {
+      "path": "deimv2_native/core/workspace.py",
+      "sha256": "956a61ddd6973a8a332f0826ed31bcfffd9075452e9e58950ce685dc771d217c",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/core/workspace.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3_adapter.py",
+      "sha256": "1ffc927bdecf693ca2f033864b4e8d2aadb54d38ce43ea015e8df30ef1a7fdc2",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3_adapter.py"
+    },
+    {
+      "path": "deimv2_native/backbone/vit_tiny.py",
+      "sha256": "23a4c69c754d0d4b1bbc71f69218a83c02a8504cc0ef36f28243f40202c94098",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/vit_tiny.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/__init__.py",
+      "sha256": "21856837ca4fcc39a8a7cfb4fb3e6627d567354a1803e045240a1f8528ec3978",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/__init__.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/layers/__init__.py",
+      "sha256": "2f191714881cf6020888ab563c024654678f7dc2bc8c75435a476881165215fd",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/layers/__init__.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/layers/attention.py",
+      "sha256": "6fcc37cbcbf569b63136edae89c3a9af97b3d62e30c92d46cf505062dc9760dd",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/layers/attention.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/layers/block.py",
+      "sha256": "adcdb35125357aa76021b2210e93f5b321f9c5bdc14e8a1856211c15234ab7bc",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/layers/block.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/layers/dino_head.py",
+      "sha256": "a066e9391c0496f119b94b096803d2378c46a79723661b21fa2ed969f6c9e4f4",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/layers/dino_head.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/layers/ffn_layers.py",
+      "sha256": "db046ec6b276ec4b27bdfe6675ebe26eb3f2775f75f930010a7db59b8ff3aa69",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/layers/ffn_layers.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/layers/fp8_linear.py",
+      "sha256": "b0cdaf9fb7387fe613a8606d5e5114ad0bbbd8e43d64be9910c8c690f84da955",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/layers/fp8_linear.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/layers/layer_scale.py",
+      "sha256": "00449552e2ae8ffe28a1f64b58340b8ab2a7682b592b3e225677f88891127fee",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/layers/layer_scale.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/layers/patch_embed.py",
+      "sha256": "a9ec7336332ac0b0073a60ff79040a250d05e719f3ab85fcb6759a7d97dff6be",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/layers/patch_embed.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/layers/rms_norm.py",
+      "sha256": "2c669e5ae44222dd8332dd9d125bdea8f9ac5d7023976efbe53a21fab3f9754f",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/layers/rms_norm.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/layers/rope_position_encoding.py",
+      "sha256": "41f233d8a34f304e16a621508ff8040d58e4a99a445a6bf9e3b08b2e742b391c",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/layers/rope_position_encoding.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/layers/sparse_linear.py",
+      "sha256": "70827392a684a4c33ebaf139b0858497f3fb33852ba4c006fb7537515f189810",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/layers/sparse_linear.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/utils/__init__.py",
+      "sha256": "662dfd144069bbed50c80d3c7d1a7d3ad0fd5aca7e36a6b5b0624bce87f6fc66",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/utils/__init__.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/utils/cluster.py",
+      "sha256": "d8a0520f76eb4881f4b49a235381d7405e3fae1609a07ed2105d060832f9aa0e",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/utils/cluster.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/utils/custom_callable.py",
+      "sha256": "a8443a2d9c3daff901292d1d832bc6f494bf3d2e0cb3888874f4f10537ca018a",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/utils/custom_callable.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/utils/dtype.py",
+      "sha256": "4b7221d62772b93da04337da70cfb34a420cb9d91025b7b2a5e5f83ae5242332",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/utils/dtype.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/utils/utils.py",
+      "sha256": "269e27f50f19fe248cad9c3d236f745993a6fa145862b5196efa2a9f1c962c4f",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/utils/utils.py"
+    },
+    {
+      "path": "deimv2_native/backbone/dinov3/vision_transformer.py",
+      "sha256": "4d48c301d1e917e615a48178dc8031f1c7274217aa7e2f03cff5cf0a81b77c77",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/backbone/dinov3/vision_transformer.py"
+    },
+    {
+      "path": "deimv2_native/deim/deim.py",
+      "sha256": "b35e8a472c78232744b27d405f3a5f905dbde9063cf68ad0e2a93cd47b47571a",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/deim/deim.py"
+    },
+    {
+      "path": "deimv2_native/deim/deim_decoder.py",
+      "sha256": "13cd898d01a92dd36e7eb3be9bbf530b124a101388b0e0a9dc34e868652a9ec5",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/deim/deim_decoder.py"
+    },
+    {
+      "path": "deimv2_native/deim/dfine_decoder.py",
+      "sha256": "69ac4532d933d5ba203cd20c3e443cc39521e09a18ed21dce5f5e1ff47650497",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/deim/dfine_decoder.py"
+    },
+    {
+      "path": "deimv2_native/deim/dfine_utils.py",
+      "sha256": "568c5b1d87d7204f32116ff3cb5c0dabb6f3cbe26cd8d9b2f2b09235fd8e8728",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/deim/dfine_utils.py"
+    },
+    {
+      "path": "deimv2_native/deim/deim_utils.py",
+      "sha256": "77c6a67837a8532102ff185dec1aaac411343fbe24d58850228615bdd7ea2c36",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/deim/deim_utils.py"
+    },
+    {
+      "path": "deimv2_native/deim/hybrid_encoder.py",
+      "sha256": "e83deb1713faa16a882ef3b3375956c507a411fad80b854bb8a823741e0600a0",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/deim/hybrid_encoder.py"
+    },
+    {
+      "path": "deimv2_native/deim/postprocessor.py",
+      "sha256": "42a7313c6aed56d6cf3fa9ce2e782fd550ad9caecb29fd5914fe5767abc8b244",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/deim/postprocessor.py"
+    },
+    {
+      "path": "deimv2_native/deim/box_ops.py",
+      "sha256": "0dbf49353060dadbe48ff6a97d72a4564a91d670b0da96ec4a2689ebdc9b594c",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/deim/box_ops.py"
+    },
+    {
+      "path": "deimv2_native/deim/denoising.py",
+      "sha256": "da9283400940d0bb1cb2b29138bae1020f90a24d95f4f1c318db5ee82e3f02f3",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/deim/denoising.py"
+    },
+    {
+      "path": "deimv2_native/deim/utils.py",
+      "sha256": "e5c0b968f601390890cd3214ebc3c9b660654227e56cc85843e299a8592bdd9d",
+      "upstream_path": "experiments/fruitcount_deimv2/upstream/engine/deim/utils.py"
+    },
+    {
+      "path": "deimv2_native/core/__init__.py",
+      "sha256": "c162bb4a9544e3f4e12ea39ef97bdd6c0c2223f4025467a77d61edba1ccbf857",
+      "upstream_path": null,
+      "note": "Local inference-only import boundary / compatibility helper."
+    },
+    {
+      "path": "deimv2_native/__init__.py",
+      "sha256": "529431f97d48a57bdc8c26680929d239e249559ff4ab42339f31a32337acb603",
+      "upstream_path": null,
+      "note": "Local inference-only import boundary / compatibility helper."
+    },
+    {
+      "path": "deimv2_native/backbone/__init__.py",
+      "sha256": "0f787c4cab2df2a08cf681b825d2876fb72fffa309825027c2ec07612d893cdd",
+      "upstream_path": null,
+      "note": "Local inference-only import boundary / compatibility helper."
+    },
+    {
+      "path": "deimv2_native/deim/__init__.py",
+      "sha256": "c199c9bc83d72ad4959134043320f12fbbf303b6c59444f1a5ffbfd1214de31d",
+      "upstream_path": null,
+      "note": "Local inference-only import boundary / compatibility helper."
+    }
+  ]
+}

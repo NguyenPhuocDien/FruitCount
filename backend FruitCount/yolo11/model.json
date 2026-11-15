@@ -1,0 +1,9 @@
+{
+  "name": "YOLO11m FruitCount",
+  "family": "yolo",
+  "task": "detection",
+  "weights": "best_fruitcount.pt",
+  "deployConfig": "deploy_config.json",
+  "adapter": "adapter.py",
+  "classes": ["fruit"]
+}

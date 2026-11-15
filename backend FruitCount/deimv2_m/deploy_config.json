@@ -1,0 +1,13 @@
+{
+  "architecture": "deimv2",
+  "dataset": "M1 Photometric",
+  "mode": "full",
+  "imgsz": 832,
+  "min_score": 0.05,
+  "det_conf": 0.35,
+  "count_conf": 0.4,
+  "nms_iou": 0.6,
+  "max_det": 1500,
+  "device": "auto",
+  "native_config": "native_model_config.json"
+}
