@@ -29,8 +29,8 @@ Website kiểm thử mô hình Computer Vision: tải mô hình (`.pt`, `.onnx`,
 ## 🚀 Chạy web – 1 lệnh
 
 ```bash
-git clone https://github.com/HoangMinnn/Website_CV.git
-cd Website_CV
+git clone https://github.com/NguyenPhuocDien/FruitCount.git
+cd FruitCount
 npm start
 ```
 
@@ -69,7 +69,7 @@ Dự án đã có sẵn file `render.yaml`. Các bước triển khai:
 
 1. Đăng nhập [Render.com](https://render.com) bằng tài khoản GitHub của bạn.
 2. Nhấn nút **New +** ở góc trên → chọn **Web Service**.
-3. Chọn kết nối với kho lưu trữ **`Website_CV`**.
+3. Chọn kết nối với kho lưu trữ **`FruitCount`**.
 4. Điền các thông số (hoặc Render sẽ tự nhận qua `render.yaml`):
    - **Name:** `website-cv` (tuỳ ý)
    - **Runtime:** `Node`
